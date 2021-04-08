@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamarinPD.Views.ScreenShotPage"
+              ControlTemplate ="{StaticResource KontrolesSablonas}">
+    
+    
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Padding="12" Spacing="6">
+                <Button Text="Take screenshot" Clicked="Button_Clicked"/>
+                <Image VerticalOptions="FillAndExpand"
+                       MinimumHeightRequest="400"
+                       MinimumWidthRequest="400"
+                       x:Name="Screenshotas"/>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamarinPD.Views.ProductPage"
+             xmlns:views="clr-namespace:XamarinPD.Views"
+             xmlns:converters="clr-namespace:XamarinPD.Converter"
+             xmlns:vm="clr-namespace:XamarinPD.ViewModels"
+             ControlTemplate ="{StaticResource KontrolesSablonas}">
+
+    <ContentPage.Resources>
+        <converters:BoolValueInverter x:Key="BoolValueInverter"/>
+
+        <Style TargetType="Button">
+            <Setter Property="FontSize"
+                    Value="Small" />
+            <Setter Property="CornerRadius"
+                    Value="10" />
+        </Style>
+
+    </ContentPage.Resources>
+
+        <ContentPage.Content>
+             <Grid>
+               <ListView ItemsSource="{Binding Products}" 
+                      SelectionMode="None"
+                      IsVisible="{Binding IsProductSelected, Converter={StaticResource BoolValueInverter}}">
+                   <ListView.ItemTemplate>
+                      <DataTemplate>
+                        <TextCell Text="{Binding ShopName}" 
+                                  Command="{Binding BindingContext.OpenProductCommand, 
+                                    Source={RelativeSource AncestorType={x:Type views:ProductPage}}}"
+                                  CommandParameter="{Binding}"
+                                  />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+                <ListView.Footer>
+                    <Button Command="{Binding CreateProductCommand}" Text="Create Product"/>
+                </ListView.Footer>
+                </ListView>
+
+            <ListView BindingContext="{Binding SelectedProductViewModel}" 
+                      IsVisible="{Binding BindingContext.IsProductSelected, 
+                        Source={RelativeSource AncestorType={x:Type views:ProductPage}} }" 
+                      ItemsSource="{Binding Notes}"
+                      SelectionMode="None">
+                <ListView.Header>
+                    <Label Text="{Binding ShopName}"/>               
+                </ListView.Header>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Label Text="{Binding Note}"/>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+                <ListView.Footer>
+                    <StackLayout>
+                        <Button Text="Delete product" 
+                                Command="{Binding BindingContext.DeleteProductCommand, 
+                                    Source={RelativeSource AncestorType={x:Type views:ProductPage}}}"/>
+                        <Button Text="Add note" Command="{Binding CreateNoteCommand}"/>
+                        <Button Text="Back" 
+                                Command="{Binding BindingContext.CloseProductCommand, 
+                                    Source={RelativeSource AncestorType={x:Type views:ProductPage}}}" />
+                    </StackLayout>
+                </ListView.Footer>
+            </ListView>
+
+                 
+
+        </Grid>
+            
+              
+            
+
+        </ContentPage.Content>
+    
+
+
+</ContentPage>

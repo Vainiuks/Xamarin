@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamarinPD.Views.ReminderPage"
+             ControlTemplate ="{StaticResource KontrolesSablonas}">
+
+    <ContentPage.Resources>
+        
+        <Thickness x:Key="PageMargin">20</Thickness>
+
+        <Color x:Key="AppPrimaryColor">#FF00E8FF</Color>
+        <Color x:Key="AppBackgroundColor">AliceBlue</Color>
+        <Color x:Key="PrimaryColor">Black</Color>
+        <Color x:Key="SecondaryColor">White</Color>
+        <Color x:Key="TertiaryColor">Silver</Color>
+
+        <Style TargetType="Button">
+            <Setter Property="FontSize"
+                    Value="Small" />
+            <Setter Property="BackgroundColor"
+                    Value="{StaticResource AppPrimaryColor}" />
+            <Setter Property="TextColor"
+                    Value="{StaticResource SecondaryColor}" />
+            <Setter Property="CornerRadius"
+                    Value="10" />
+        </Style>
+
+    </ContentPage.Resources>
+
+
+    <ContentPage.Content>
+        <ListView ItemsSource="{Binding Reminders}" 
+                      SelectionMode="None">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding ReminderName}"/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+            <ListView.Footer>
+                <Button Command ="{Binding CreateReminderCommand}" Text="Create reminder"/>
+            </ListView.Footer>
+        </ListView>
+    </ContentPage.Content>
+</ContentPage>

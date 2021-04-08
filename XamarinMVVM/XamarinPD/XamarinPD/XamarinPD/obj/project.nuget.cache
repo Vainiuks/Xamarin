@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "inj9JVrSr1Z0gfJaIkDTu15cxNvddEGkeVa4slQ8z/EDkxWXR2wV4pSyT96kP0lRGmFGhS/F6YXZZ3r9aa1UNA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\vaini\\OneDrive\\Desktop\\6 Semestras\\C#\\XamarinMVVM\\XamarinPD\\XamarinPD\\XamarinPD\\XamarinPD.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\vaini\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\vaini\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\vaini\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Users\\vaini\\.nuget\\packages\\xamarin.essentials\\1.6.1\\xamarin.essentials.1.6.1.nupkg.sha512",
+    "C:\\Users\\vaini\\.nuget\\packages\\xamarin.forms\\4.8.0.1451\\xamarin.forms.4.8.0.1451.nupkg.sha512"
+  ],
+  "logs": []
+}
